@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GoodMan5.0</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#111827;
+color:#fff;
+display:flex;
+flex-direction:column;
+height:100vh;
+}
+
+header{
+background:#1f2937;
+padding:15px;
+font-size:22px;
+text-align:center;
+font-weight:bold;
+}
+
+#chat{
+flex:1;
+overflow:auto;
+padding:15px;
+}
+
+.message{
+padding:10px;
+margin:10px 0;
+border-radius:10px;
+max-width:80%;
+}
+
+.ai{
+background:#374151;
+}
+
+.user{
+background:#2563eb;
+margin-left:auto;
+}
+
+footer{
+display:flex;
+padding:10px;
+background:#1f2937;
+}
+
+input{
+flex:1;
+padding:10px;
+border:none;
+border-radius:10px;
+}
+
+button{
+margin-left:10px;
+padding:10px 20px;
+border:none;
+border-radius:10px;
+background:#00bcd4;
+color:white;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>🤖 GoodMan5.0</header>
+
+<div id="chat">
+<div class="message ai">
+হ্যালো! আমি GoodMan5.0 🚩
+</div>
+</div>
+
+<footer>
+<input id="msg" placeholder="কিছু লিখুন...">
+<button onclick="send()">Send</button>
+</footer>
+
+<script>
+function send(){
+
+let text=document.getElementById("msg").value;
+
+if(text=="") return;
+
+let chat=document.getElementById("chat");
+
+chat.innerHTML+=`
+<div class="message user">${text}</div>
+<div class="message ai">আমি এখনো AI-এর সাথে যুক্ত হইনি।</div>
+`;
+
+document.getElementById("msg").value="";
+
+chat.scrollTop=chat.scrollHeight;
+
+}
+</script>
+
+</body>
+  </html>
